@@ -1,5 +1,5 @@
 ### Установка
 ##### С TamperMonkey
 - Установить TamperMonkey из "магазина" расширений для нужного браузера
-- Открыть (в браузере) results.user.js и открыть его в "сыром" виде (кнопка "raw" справа сверху)
+- Тык сюда -> (results.user.js)[https://github.com/pew-pew/informatics-results/raw/master/results.user.js]
 - Нажать "установить" (или "install")
