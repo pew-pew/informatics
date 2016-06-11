@@ -6,5 +6,6 @@
 - - Для [файрфокса - Greasemonkey](https://addons.mozilla.org/ru/firefox/addon/greasemonkey/)
 - Тык сюда -> [results.user.js](https://github.com/pew-pew/informatics-results/raw/master/results.user.js)
 - Нажать "установить" (или "install")
+
 ##### Способ второй (опера и хром)
 - Добавить как распакованное расширение папку "extension" из этого репозитория через менеджер расширений с функциями разработчика
