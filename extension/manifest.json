@@ -2,6 +2,7 @@
 	"manifest_version": 2,
 	"name": "informatics results",
 	"version": "1.0",
+	"author": "68958824",
 	
 	"content_scripts": [
 		{
