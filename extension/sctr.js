@@ -1,16 +1,16 @@
 defaultArgs = {
-problem_id: 0, // задача, chapterid
-group_id: 0, //5321, // ...
-user_id: 0, // ...
-statement_id: 0, //10887, // ?
-count: 5000,
+	problem_id: 0, // задача, chapterid
+	group_id: 0, //5321, // ...
+	user_id: 0, // ...
+	statement_id: 0, //10887, // ?
+	count: 5000,
 
-lang_id: -1,
-status_id: -1,
-page: 0,
-action: "getHTMLTable",
-objectName: "submits",
-with_comment: ""};
+	lang_id: -1,
+	status_id: -1,
+	page: 0,
+	action: "getHTMLTable",
+	objectName: "submits",
+	with_comment: ""};
 
 function frm(u, d) {
 	f = true;
@@ -109,10 +109,22 @@ function getTasks() {
 }
 
 function fillTable(results) {
-	table = document.getElementsByClassName("BlueTable")[0];
-	tasks = getTasks();
+	var table = document.getElementsByClassName("BlueTable")[0];
+	var tasks = getTasks();
 	console.log(results);
-	rows = [];
+	var rows = [];
+	var scoreCell = -1;
+	for (var i = 0; i < table.rows[0].length; i++) {
+		if (~table.rows[0].cells[i].innerText.toLowerCase().indexOf("балл")) scoreCell = i;
+	}
+	if (scoreCell == -1) {
+		scoreCell = table.rows[0].cells.length;
+		for (var r = 0; r < table.rows.length; r++) {
+			td = document.createElement("td");
+			if (r == 0) td.innerText = "Балл";
+			table.rows[r].appendChild(td);
+		}
+	}
 	for (var r = 1; r < table.rows.length; r++) {
 		var name = table.rows[r].cells[1].innerText.trim();
 		res = 0;
@@ -120,10 +132,14 @@ function fillTable(results) {
 			if (results[name] === undefined) continue;
 			b = results[name][tasks[i]];
 			if (b === undefined) continue;
-			table.rows[r].cells[2 + i].innerText = b;
-			if (typeof(b) == "number") res += b;
+			if (typeof(b) == "number") {
+				table.rows[r].cells[2 + i].innerText = b;
+				res += b;
+			} else if (~table.rows[r].cells[2 + i].innerText.indexOf("+")) {
+				res += 100;
+			}
 		}
-		table.rows[r].cells[3 + tasks.length].innerText = res;
+		table.rows[r].cells[scoreCell].innerText = res;
 		rows.push([res, table.rows[r]]);
 	}
 	for (r = table.rows.length - 1; r > 0; r--) {
