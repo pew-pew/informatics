@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Informatics results
-// @version      1.0
+// @version      1.1
 // @description  try to take over the world!
 // @author       68958824
 // @match        http://informatics.msk.ru/*
