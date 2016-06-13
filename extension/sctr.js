@@ -114,8 +114,11 @@ function fillTable(results) {
 	console.log(results);
 	var rows = [];
 	var scoreCell = -1;
-	for (var i = 0; i < table.rows[0].length; i++) {
-		if (~table.rows[0].cells[i].innerText.toLowerCase().indexOf("балл")) scoreCell = i;
+	for (var i = 0; i < table.rows[0].cells.length; i++) {
+		if (~table.rows[0].cells[i].innerText.toLowerCase().indexOf("балл")) {
+			scoreCell = i;
+			break;
+		}
 	}
 	if (scoreCell == -1) {
 		scoreCell = table.rows[0].cells.length;
