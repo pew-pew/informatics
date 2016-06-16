@@ -4,7 +4,7 @@
 - - для [оперы - Tampermonkey](https://addons.opera.com/ru/extensions/details/tampermonkey-beta/)
 - - для [хрома - Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
 - - для [файрфокса - Greasemonkey](https://addons.mozilla.org/ru/firefox/addon/greasemonkey/)
-- Тык сюда -> [results.user.js](https://github.com/pew-pew/informatics-results/raw/master/results.user.js)
+- Перейти сюда -> [results.user.js](https://github.com/pew-pew/informatics-results/raw/master/results.user.js)
 - Нажать "установить" (или "install")
 
 ##### Способ второй (опера и хром)
