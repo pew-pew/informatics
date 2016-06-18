@@ -159,11 +159,12 @@ function fillTable(results) {
 		table.rows[r].parentElement.removeChild(table.rows[r]);
 	}
 	rows = rows.sort(function (x, y) {
-		return parseInt(x[0]) - parseInt(y[0]);
+		return parseInt(y[0]) - parseInt(x[0]);
 	});
 	//console.log(rows);
-	for (r = rows.length - 1; r >= 0; r--) {
+	for (r = 0; r < rows.length; r++) {
 		table.rows[0].parentElement.appendChild(rows[r][1]);
+		rows[r][1].cells[0].innerText = r + 1;
 	}
 }
 
