@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "informatics results",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"author": "68958824",
 	
 	"content_scripts": [
